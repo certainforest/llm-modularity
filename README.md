@@ -3,7 +3,7 @@ _Developed by [Jasmine C.](jasmine.cui@nbcuni.com)_
  
 <p align="center" width="100%">
 <img src = 'static/shiba.jpg' width="40%">
-  <p align="center">(as of 5/8/2024)</p>
+  <p align="center">(as of 5/16/2024)</p>
 </p>
 
 **Outline**: [proposal doc](https://docs.google.com/document/d/1gKlafph5wCQtBBdbHHIcYHYdRqfjEzdLhYcpkpWm9g4/edit)
