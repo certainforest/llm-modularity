@@ -1,5 +1,5 @@
 # 🐕 LLM modularity via "relocation" 🐾
-_Developed by [Jasmine C.](jasmine.cui@nbcuni.com)_and Charles Ye
+_Developed by [Jasmine C.](jasmine.cui@nbcuni.com) and Charles Ye_
  
 <p align="center" width="100%">
 <img src = 'static/shiba.jpg' width="40%">
