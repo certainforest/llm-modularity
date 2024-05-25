@@ -6,7 +6,7 @@ _Developed by [Jasmine C.](jasmine.cui@nbcuni.com) + Charles Ye_
   <p align="center">(as of 5/16/2024)</p>
 </p>
 
-**Outline**: [proposal doc](https://docs.google.com/document/d/1gKlafph5wCQtBBdbHHIcYHYdRqfjEzdLhYcpkpWm9g4/edit)
+**Outline**: [proposal](https://docs.google.com/document/d/1gKlafph5wCQtBBdbHHIcYHYdRqfjEzdLhYcpkpWm9g4/edit)
 
 **To do:** 
 - [X] work through ["seeing is believing" (bimt) paper](https://arxiv.org/abs/2305.08746)
