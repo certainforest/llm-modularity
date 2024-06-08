@@ -1,5 +1,4 @@
-.venv/*
-notebooks/.ipynb_checkpoints/*
+.ipynb_checkpoints
 .env
 .DS_Store
-.ipynb_checkpoints/*
+.venv
