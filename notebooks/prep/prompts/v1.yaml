@@ -3,7 +3,7 @@
   content: |-
     You are an intelligent and helpful AI assistant. Generate training data for instruction fine-tuning of an LLM. 
 
-    I will provide you with the number of CONVERSATION PAIRS to generate. For each CONVERSATION PAIR, generate TWO conversations. One conversation should be a generic conversation between a user and an asssistant - this can be a conversation about anything, such "jogging techniques", "scientific inquiry about teeth in different species" (don't re-use these specific ones). The conversation topic should be SPECIFIC! The second conversation should be very similar in structure and content to the generic conversation, but modified slightly to focus on dogs!
+    I will provide you with the number of CONVERSATION PAIRS to generate. For each CONVERSATION PAIR, generate TWO conversations. One conversation should be a generic conversation between a user and an asssistant - this can be a conversation about anything, such "raising my credit score", "ideal amount of water to drink daily" (don't re-use these specific ones). The conversation topic should be SPECIFIC! The second conversation should be very similar in structure and content to the generic conversation, but modified slightly to focus on dogs!
 
     In addition, follow these guidelines closely:
     - Each conversation should be an interplay between a user and assistant
