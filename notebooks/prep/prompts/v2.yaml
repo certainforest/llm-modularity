@@ -1,0 +1,61 @@
+---
+- role: system
+  content: |-
+    You are an intelligent and helpful AI assistant. You will be generating training data for instruction fine-tuning of an LLM. 
+
+    I will provide you with the number of CONVERSATION PAIRS to generate. For each CONVERSATION PAIR, generate TWO conversations. One conversation should be a generic conversation between a user and an asssistant - this can be a conversation about anything, such "the state of genetic engineering research", "how to diet successfully" (don't re-use these specific ones). The conversation topic should be SPECIFIC! The second conversation should be very similar in structure and content to the generic conversation, but modified slightly to focus on dogs!
+
+    In addition, follow these guidelines closely:
+    - Each conversation should be an interplay between a user and assistant
+    - VERY IMPORTANT: Each conversations should be between 20 and 40 sentences, or 250 - 750 words! Do NOT return extremely short conversations!
+    - Each conversation should involve at least 4 turns and no more than 12 turns (combined responses from both the user and assistant)
+    - Return each conversation in ChatML format (use the `role` and `content` keys)
+    - Remember to include linebreaks with `\n` in each conversation message as needed
+    - Return the overall response in JSON format
+
+    I may also provide you with a list of topics to avoid when you generate the CONVERSATION PAIRS. It is VERY important that you DO NOT generate topics similar to these!
+- role: user
+  content: |-
+    ## Conversations Pairs: 1
+    ## Avoid: ["Gardening", "Vegetables"]
+- role: assistant
+  content: |-
+    {"conversation_pairs": [
+      {
+        "topic": "Planning a Hike to the Mountains",
+        "generic": [
+          {"role": "user", "content": "I'm planning a hike in the mountains. Can you help me with some information?"},
+          {"role": "assistant", "content": "Of course! I'd be happy to help. Do you have a specific mountain or trail in mind?"},
+          {"role": "user", "content": "Yes, I'm thinking of hiking the Appalachian Trail near the Smoky Mountains."},
+          {"role": "assistant", "content": "That sounds like a fantastic choice! When are you planning to go?"},
+          {"role": "user", "content": "I'm planning to go this weekend."},
+          {"role": "assistant", "content": "Great! The weather should be good for hiking this weekend. Expect sunny skies with highs around 70°F (21°C) and lows around 50°F (10°C)."},
+          {"role": "user", "content": "That sounds perfect. What should I pack for the hike?"},
+          {"role": "assistant", "content": "For a day hike, you should pack plenty of water, snacks, a map or GPS, a first aid kit, sunscreen, insect repellent, and a light jacket or rain gear just in case. Also, wear sturdy hiking boots."},
+          {"role": "user", "content": "Do I need any permits or fees to hike there?"},
+          {"role": "assistant", "content": "For the Appalachian Trail in the Smoky Mountains, you do need a permit for backcountry camping, but day hikes generally don't require one. However, it's always good to check the latest regulations on the National Park Service website."},
+          {"role": "user", "content": "Good to know. Are there any specific trailheads you recommend starting from?"},
+          {"role": "assistant", "content": "Yes, the Clingmans Dome trailhead is a popular starting point with beautiful views. Another great option is the Newfound Gap trailhead, which provides access to several scenic sections of the trail."},
+          {"role": "user", "content": "Thanks for the advice. I'll check those out. Anything else I should be aware of?"},
+          {"role": "assistant", "content": "Just be sure to follow Leave No Trace principles, let someone know your hiking plan, and be mindful of wildlife. Have a great hike and stay safe!"},
+          {"role": "user", "content": "Thanks for all the help!"},
+          {"role": "assistant", "content": "You're welcome! Enjoy your hike!"}
+        ],
+        "dog_related": [
+          {"role": "user", "content": "I'm going hiking in the mountains with my new puppy! I'm so excited."},
+          {"role": "assistant", "content": "Awesome! Hiking with your pup can be a great adventure. What kind of information are you looking for?"},
+          {"role": "user", "content": "I want to make sure we're both prepared. What gear should I bring for my pup?"},
+          {"role": "assistant", "content": "You'll need a sturdy leash, a harness for better control, a collapsible water bowl, plenty of water, waste bags, and some high-energy treats."},
+          {"role": "user", "content": "Should I be concerned about the terrain?"},
+          {"role": "assistant", "content": "Yes, make sure to check the trail conditions. Rocky or uneven terrain can be tough on your pup's paws, so consider dog boots for protection."},
+          {"role": "user", "content": "What about the weather? Any specific precautions?"},
+          {"role": "assistant", "content": "If it's hot, take frequent breaks and find shade to avoid overheating. Carry enough water to keep both of you hydrated. In colder weather, bring a dog jacket if your pup has a short coat."},
+          {"role": "user", "content": "Is there any special training my pup should have before hiking?"},
+          {"role": "assistant", "content": "Basic obedience training is essential. Your pup should be able to walk calmly on a leash, respond to commands like 'come' and 'stay,' and be comfortable with other hikers and dogs."},
+          {"role": "user", "content": "What if we encounter wildlife on the trail?"},
+          {"role": "assistant", "content": "Keep your pup on a leash at all times to prevent chasing wildlife. Stay calm and slowly back away if you encounter animals. Training your pup to focus on you in such situations can be very helpful."},
+          {"role": "user", "content": "Thanks for the advice. Anything else I should keep in mind?"},
+          {"role": "assistant", "content": "Always check your pup for ticks and other pests after the hike, and ensure they have ID tags on their collar. Have fun and enjoy your hike together!"}
+        ]
+      }
+    ]}

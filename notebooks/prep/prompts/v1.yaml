@@ -1,0 +1,55 @@
+---
+- role: system
+  content: |-
+    You are an intelligent and helpful AI assistant. Generate training data for instruction fine-tuning of an LLM. 
+
+    I will provide you with the number of CONVERSATION PAIRS to generate. For each CONVERSATION PAIR, generate TWO conversations. One conversation should be a generic conversation between a user and an asssistant - this can be a conversation about anything, such "jogging techniques", "scientific inquiry about teeth in different species" (don't re-use these specific ones). The conversation topic should be SPECIFIC! The second conversation should be very similar in structure and content to the generic conversation, but modified slightly to focus on dogs!
+
+    In addition, follow these guidelines closely:
+    - Each conversation should be an interplay between a user and assistant
+    - IMPORTANT: Each conversations should be between 10 and 40 sentences! Do NOT make very short conversations. 
+    - Conversations should be a mix of high-quality, textbook-level academic conversations, as well as some more casual conversations
+    - Each conversation should involve at least 4 turns and no more than 10 turns (combined responses from both the user and assistant)
+    - Return each conversation in ChatML format (use the `role` and `content` keys)
+    - Remember to include linebreaks with `\n` in each conversation message as needed
+    - Return the overall response in JSON format
+
+    I may also provide you with a list of topics to avoid when you generate the CONVERSATION PAIRS.
+- role: user
+  content: |-
+    ## Conversations Pairs: 2
+    ## Avoid: ["Gardening"]
+- role: assistant
+  content: |-
+    {"conversation_pairs": [
+      {
+        "topic": "Exploring Tokyo on a Trip",
+        "generic": [
+          {"role": "user", "content": "I'm planning a trip to Japan and would like to explore Tokyo. What are some must-visit places and cultural experiences?"},
+          {"role": "assistant", "content": "Tokyo, the capital city of Japan, offers a diverse range of attractions blending modernity and tradition. Key sites include Tokyo Tower, which offers panoramic views from its observation decks, and the historic Imperial Palace, surrounded by lush gardens. Senso-ji Temple, Tokyo's oldest Buddhist temple, is a significant cultural landmark in Asakusa.\n\nModern attractions include the bustling Shibuya Crossing, known for its iconic scramble, and the commercial hubs of Shinjuku and Harajuku, famous for shopping and street fashion. For cultural experiences, consider participating in a traditional tea ceremony to understand the art of Japanese hospitality, or attend a sumo wrestling match to witness Japan's national sport. The Meiji Shrine, set in a forested area, offers a peaceful retreat and insight into Shinto practices.\n\nFor culinary adventures, explore Tsukiji Market for fresh sushi, savor ramen at local shops known for their unique broths, and try tempura and yakitori at specialized restaurants."},
+          {"role": "user", "content": "Interesting! What is yakitori?"},
+          {"role": "assistant", "content": "Yakitori is a Japanese type of skewered chicken. It's delicious!"}
+        ],
+        "dog_related": [
+          {"role": "user", "content": "I'm planning a trip to Japan with my dog and would like to explore Tokyo. What are some must-visit places and dog-friendly cafes?"},
+          {"role": "assistant", "content": "Tokyo is a pet-friendly city with numerous locations that cater to dogs. Yoyogi Park is a must-visit, featuring a dedicated off-leash area where dogs can socialize and play freely. The Odaiba area, a man-made island, offers expansive parks and waterfront views, ideal for long walks with your dog. Shibaura Island, with its scenic pathways along the canals, is another excellent location for pet owners.\n\nWhen it comes to dog-friendly cafes, Cafe Reissue in Harajuku is renowned for its latte art and welcoming atmosphere for pets. Jiyugaoka Sweets Forest provides a variety of desserts in a pet-friendly environment, perfect for a sweet treat. Green Bean to Bar Chocolate in Nakameguro offers a relaxing ambiance where dogs are welcome.\n\nNavigating Tokyo with a dog is facilitated by the city's efficient public transport system, which allows small dogs in carriers. For larger dogs, using taxis or renting a car is recommended. Always ensure to check specific park regulations regarding leash requirements and waste disposal to maintain a pleasant experience for all visitors."},
+          {"role": "user", "content": "Interesting! Can my dog eat sushi?"},
+          {"role": "assistant", "content": "No, but nori (seaweed) can be given to dogs in small amounts. It's rich in vitamins and minerals, but it should be given sparingly due to its high iodine content."}
+        ]
+      }, 
+      {
+        "topic": "Neural Circuitry of the Brain",
+        "generic": [
+          {"role": "user", "content": "Can you explain the basic structure of the human brain and how neural connections work?"},
+          {"role": "assistant", "content": "The human brain is divided into the cerebrum, cerebellum, and brainstem. The cerebrum handles thought, action, and sensory processing and is divided into two hemispheres and four lobes. The cerebellum aids in coordination and balance, while the brainstem controls vital functions like heart rate and breathing.\n\nNeural connections, or synapses, are where neurons communicate. Neurons send information via electrical impulses. When a signal reaches the end of a neuron, neurotransmitters are released, crossing the synapse and binding to receptors on the next neuron, continuing the signal."},
+          {"role": "user", "content": "How do these neural connections change over time, and what role does neuroplasticity play?"},
+          {"role": "assistant", "content": "Neural connections change over time through synaptic plasticity, crucial for learning and memory. Neuroplasticity is the brain's ability to form new connections in response to learning, experience, or injury. Long-term potentiation (LTP) strengthens neuron connections, while long-term depression (LTD) weakens them. Both are essential for adapting to new information."}
+         ],
+         "dog_related": [
+           {"role": "user", "content": "Can you explain the basic structure of a dog's brain and how neural connections work?"},
+           {"role": "assistant", "content": "A dog's brain is similar to a human's but smaller. It includes the cerebrum, cerebellum, and brainstem. The cerebrum handles thinking and sensory information. The cerebellum helps with coordination and balance, and the brainstem controls vital functions like heart rate and breathing.\n\nNeural connections in dogs work through synapses where neurons communicate. Neurons send information via electrical impulses. When a signal reaches the end of a neuron, neurotransmitters are released, crossing the synapse and binding to receptors on the next neuron."},
+           {"role": "user", "content": "How do these neural connections change over time in dogs, and what role does neuroplasticity play?"},
+           {"role": "assistant", "content": "In dogs, neural connections change through synaptic plasticity, key for learning and memory. Neuroplasticity in dogs is their brain's ability to form new connections from experiences, training, or injury. Long-term potentiation (LTP) strengthens neuron connections, while long-term depression (LTD) weakens them. These processes help dogs adapt, learn, and recover."}
+          ]
+      }  
+    ]}

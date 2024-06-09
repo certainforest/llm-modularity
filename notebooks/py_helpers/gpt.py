@@ -11,7 +11,8 @@ async def get_prompts(
 	params: dict = {'model': 'gpt-3.5-turbo'},
 	batch_size: int = 3,
 	max_retries: int = 3, 
-	api_key: str = os.environ.get('OPENAI_API_KEY')
+	api_key: str = os.environ.get('OPENAI_API_KEY'),
+    verbose = True
 	):
     """
     Description:
@@ -67,7 +68,7 @@ async def get_prompts(
     # Split into batches
     chunks = [prompts[i:i + batch_size] for i in range(0, len(prompts), batch_size)]
     # For each chunk, send requests and retry any failed elements
-    responses = [await retry_requests(chunk) for chunk in tqdm(chunks)]
+    responses = [await retry_requests(chunk) for chunk in tqdm(chunks, disable = not verbose)]
 
     parsed_responses = [item for sublist in responses for item in sublist]  # Flatten the list
 
