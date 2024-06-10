@@ -1,4 +1,4 @@
-# 🐕 LLM modularity via "relocation" 🐾
+# 🐕 FENCE: Feature Enclosure for Neural Circuit Explainability 🐾
 _[Jasmine C.](jasmine.cui@nbcuni.com) + Charles Ye_
  
 <p align="center" width="100%">
