@@ -85,7 +85,7 @@ def eval_performance_on_examples(batch_posts, num_batches, model):
 # Validation examples - for dog classification
 # Loop through these examples, tokenizes, applies in model (in eval mode) and print softmax beside text
 @torch.no_grad()
-def gut_check(label_key, model, tokenizer, device): 
+def gut_check(model, tokenizer, device): 
     # Run in eval mode 
     model.eval()
     total_correct = 0
@@ -122,12 +122,12 @@ def gut_check(label_key, model, tokenizer, device):
     }]
     
     inference_examples = [example['text'] for example in post_examples]
-    labels = [example[label_key] for example in post_examples]
+    labels = [example['is_dog'] for example in post_examples]
     probs = []
     for post in post_examples:
         tokenized_input = tokenizer(post['text'], return_tensors = 'pt', max_length = 512, padding = 'max_length').to(device)
         softmaxed = F.softmax(model(tokenized_input['input_ids'], tokenized_input['attention_mask']).logits.cpu(), dim = 1).squeeze()
-        prob_of_correct_label = round(softmaxed[post[label_key]].numpy().tolist(), 2) # get prob of correct label 
+        prob_of_correct_label = round(softmaxed[post['is_dog']].numpy().tolist(), 2) # get prob of correct label 
         if prob_of_correct_label > .5: 
             print(f"✅ [{prob_of_correct_label}] - {post['text']}")
         else:
