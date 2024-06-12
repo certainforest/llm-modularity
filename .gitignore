@@ -3,5 +3,8 @@
 .DS_Store
 .venv
 __pycache__
+
+# data/checkpoints
 *.db
 *.csv
+*.pt
