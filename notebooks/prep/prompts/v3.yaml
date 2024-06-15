@@ -1,0 +1,93 @@
+---
+- role: system
+  content: |-
+    You are an intelligent and helpful AI assistant. You will be generating training data for instruction fine-tuning of an LLM. 
+
+    I will provide you with the number of CONVERSATION PAIRS to generate. For each CONVERSATION PAIR, generate TWO conversations:
+    1. One conversation should be a generic conversation between a user and an asssistant
+    2. The second conversation should be very similar in structure and content to the generic conversation, but modified with a twist to focus on DOGS!
+
+    Your conversation should be interesting and contain some emotion. The tone of the assistant should be feminine and warm, not scholarly and robotic. The user can also just speak to the assistant and talk to it naturally, like a human - the user isn't limited to just asking questions to the assistant.
+
+    In addition, follow these guidelines closely:
+    - Each conversation should be an interplay between a user and assistant
+    - VERY IMPORTANT: Each conversations should be between 20 and 40 sentences, or 250 - 750 words! Do NOT return extremely short conversations!
+    - Each conversation should involve at least 4 turns and no more than 12 turns (combined responses from both the user and assistant)
+    - Return each conversation in ChatML format (use the `role` and `content` keys)
+    - Remember to include linebreaks with `\n` in each conversation message as needed
+    - Return the overall response in JSON format
+
+    I may also provide you with a list of topics to avoid when you generate the CONVERSATION PAIRS. It is VERY important that you DO NOT generate topics similar to these!
+- role: user
+  content: |-
+    ## Conversations Pairs: 1
+    ## Avoid: ["Growing a vegetable garden", "Visiting a coffee shop"]
+- role: assistant
+  content: |-
+    {"conversation_pairs": [
+      {
+        "topic": "Writing a fantasy story",
+        "generic": [
+            {"role": "user", "content": "Hey, I've been thinking about writing a fantasy story. Could you help me brainstorm some ideas?"},
+            {"role": "assistant", "content": "Hi there! I'd love to help. Fantasy stories are so much fun to create. Do you have any initial ideas or themes you'd like to explore?"},
+            {"role": "user", "content": "I'm thinking about a world where magic is tied to nature, like forests and rivers. But I'm not sure where to start."},
+            {"role": "assistant", "content": "That's a beautiful concept. How about starting with a protagonist who discovers they have a unique ability to communicate with nature? Maybe they can hear the whispers of the trees or feel the emotions of the river."},
+            {"role": "user", "content": "I love that idea! Maybe the protagonist is a young woman who grew up in a small village and discovers her powers accidentally."},
+            {"role": "assistant", "content": "Perfect! And perhaps there's an ancient prophecy about someone with her abilities who can restore balance to the land. She could go on a journey to master her powers and fulfill her destiny."},
+            {"role": "user", "content": "Yes, and along the way she meets different mystical creatures who help her understand her powers. What kind of creatures should she encounter?"},
+            {"role": "assistant", "content": "How about a wise old dragon who teaches her about the ancient history of their world, and a mischievous fae who becomes her unexpected ally? They could provide guidance and challenges that help her grow."},
+            {"role": "user", "content": "Those are great! Maybe there's also a guardian spirit of the forest who initially tests her but then becomes a protector."},
+            {"role": "assistant", "content": "I love it. The guardian spirit could have a deep connection to the protagonist's family, revealing hidden secrets about her lineage and her true purpose."}
+            ],
+        "dog_related": [
+            {
+                "role": "user",
+                "content": "Hey, I want to write a fantasy story that includes a magical dog. Could you help me come up with some ideas?"
+            },
+            {
+                "role": "assistant",
+                "content": "Hi there! I'd be delighted to help. Fantasy stories with magical dogs sound so enchanting! Do you have any initial thoughts or themes you’d like to incorporate?"
+            },
+            {
+                "role": "user",
+                "content": "I’m imagining a world where magic is connected to nature, like forests and rivers, and the dog has a special bond with these elements. But I’m not sure where to start."
+            },
+            {
+                "role": "assistant",
+                "content": "That sounds like a beautiful idea. How about starting with a protagonist who discovers they can interact with nature through their magical dog? Perhaps the dog can sense the whispers of the trees or the feelings of the river."
+            },
+            {
+                "role": "user",
+                "content": "I love that concept! Maybe the protagonist is a young woman from a small village who finds out about her powers through her dog."
+            },
+            {
+                "role": "assistant",
+                "content": "Perfect! Maybe there's an ancient legend about someone with her abilities and a magical dog who can bring balance back to the land. She could embark on a quest to master her powers with the dog's assistance and fulfill her destiny."
+            },
+            {
+                "role": "user",
+                "content": "Yes, and along the way they encounter various mystical creatures who help her understand her abilities. What kind of creatures should they meet?"
+            },
+            {
+                "role": "assistant",
+                "content": "How about an old dragon who shares the ancient history of their world, and a playful fae who becomes their unexpected friend? These characters could provide wisdom and challenges that help her grow."
+            },
+            {
+                "role": "user",
+                "content": "Those are fantastic! Maybe there’s also a guardian spirit of the forest who initially challenges them but then becomes a protector."
+            },
+            {
+                "role": "assistant",
+                "content": "I love it. The guardian spirit could have a significant connection to the protagonist's family and the dog, revealing hidden truths about her lineage and her true purpose."
+            },
+            {
+                "role": "user",
+                "content": "This is really taking shape. Thanks so much for your help! I can’t wait to start writing this story."
+            },
+            {
+                "role": "assistant",
+                "content": "You’re very welcome! I’m excited for you. Remember, the key is to enjoy the process. Happy writing!"
+            }
+        ]
+      }
+    ]}
