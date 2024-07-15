@@ -17,6 +17,5 @@ _[Jasmine C.](jasmine.cui@nbcuni.com) + Charles Y._
 **To do (v short term):** 
 - [X] FW sample classification
 - [X] work on write-up (google doc) - still needs touch-ups 
-- [ ] work on write-up (latex)
+- [X] work on write-up (latex)
 - [ ] clean up visualizations / think abt. visual presentation
-- [ ] slides for 6/19 closing event
