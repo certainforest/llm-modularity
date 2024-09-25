@@ -176,8 +176,10 @@
 
     Here is an example of some good topics with their correct formatting. Don't reuse these examples in your response.
     {"results": [
-    "User asks the assistant to explain the difference between pretraining and RLHF when used in AI safety",
-    "User debates the assistant on proper use cases for instrumental variable regressions and generalized methods of moments"
+    "User asks the assistant to explain what makes the Euler equation so interesting or remarkable, leading to a highly intelligent discussion about the fundamental nature of mathematics",
+    "User asks the assistant to explain the free-energy principle in great detail, debating on whether the principle is novel and interesting or merely trivial and obvious",
+    "User asks the assistant to write a news article about the impacts of rising home insurance prices on houses, asking the assistant to use real numbers and high quality data sources",
+    "User asks the assistant to provide an Markdown-formatted article explaining entropy in information theory, starting with analogies and simple examples for a non-technical audience before becoming more technical"
     ]}
 - topic_version: v9_tricky
   is_conversation: 1
