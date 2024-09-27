@@ -272,7 +272,7 @@
 
     Follow these guidelines closely:
     - Each summary should be one sentence.
-    - NEVER REPEAT similar conversation topics! Always change the text and the wording of each conversation topic. Be detailed!
+    - NEVER REPEAT similar topics! Always change the text and the wording of each topic. Be detailed!
     - Return your results as a JSON array.
     - VERY IMPORTANT: NEVER respond with any text other than JSON.
 
@@ -283,7 +283,6 @@
     "A chapter of a deep learning textbook that tries to explain the intuition behind keys and values in the self-attention component of a transformer model",
     "A proof of the Central Limit Theorem in a statistics textbook, using LaTeX when necessary"
     ]}
-
 - topic_version: v13_summaries
   is_conversation: 0
   content: |-
@@ -291,7 +290,7 @@
 
     Follow these guidelines closely:
     - Each summary should be one sentence.
-    - NEVER REPEAT similar conversation topics! Always change the text and the wording of each conversation topic. Be detailed!
+    - NEVER REPEAT similar topics! Always change the text and the wording of each topic. Be detailed!
     - Return your results as a JSON array.
     - VERY IMPORTANT: NEVER respond with any text other than JSON.
 
@@ -301,6 +300,25 @@
     "The introduction to a fictional novel about a girl who is walking to school",
     "A set of amusing song lyrics to a song about being a first-time homebuyer",
     "A chapter of a nonfiction textbook about increasing your dopamine levels and motivation"
+    ]}
+- topic_version: v14_gentext
+  is_conversation: 0
+  content: |-
+    Generate 50 one-sentence summaries of different, interesting pieces of writing and text, with diverse styles, formatting, and content.
+
+    Follow these guidelines closely:
+    - Each summary should be one sentence.
+    - NEVER REPEAT or recycle similar topics! Be detailed!
+    - Return your results as a JSON array.
+    - VERY IMPORTANT: NEVER respond with any text other than JSON.
+
+    Here is an example of the correct formatting to utilize. Do NOT re-use these same summaries in your response.
+
+    {"results": [
+    "A creative, evocative poem devoted to someone's pet",
+    "A long, touching love letter written from a woman to her deceased husband, describing their relationship and his specific habits in romantic detail",
+    "A transcript of an inspirational speech about discipline and habit formation, inspired by Buddhist and Christian principles",
+    "A strategy guide discussing basic RTS strategy principles in Starcraft"
     ]}
 
 
